@@ -1,9 +1,12 @@
-const { database } = require("./database.js");
+const express = require("express");
 
 const path = require('path');
 
-const express = require("express");
+const { database } = require("./database.js");
+
+const port  = process.env.PORT || 3001;
 const app = express();
+
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname + "/public")));
@@ -48,7 +51,7 @@ app.post("/api/writeData", (req, res) => {
   return res.status(200);
 });
 
-app.listen(5000, () => {
+app.listen(port, () => {
   console.log("Server is waiting");
 });
 
