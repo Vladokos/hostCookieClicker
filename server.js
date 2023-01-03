@@ -29,7 +29,6 @@ app.post("/api/getData", (req, res) => {
 app.post("/api/writeData", (req, res) => {
   const { id, currency, helpers } = req.body;
   if(!id && currency === null && helpers === null) return res.status(400);
-  console.log(req.body);
   database.query(
     `SELECT * FROM users WHERE id = '${id}'`,
     (error, results, fields) => {
