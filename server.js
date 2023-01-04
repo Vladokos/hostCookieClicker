@@ -7,7 +7,6 @@ const { database } = require("./database.js");
 const port  = process.env.PORT || 3001;
 const app = express();
 
-
 app.use(express.json());
 app.use(express.static(path.join(__dirname + "/public")));
 
